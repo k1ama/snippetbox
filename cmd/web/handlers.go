@@ -15,7 +15,6 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		app.NotFound(w)
 		return
 	}
-
 	snippets, err := app.snippets.Latest()
 	if err != nil {
 		if errors.Is(err, models.ErroNoRecord) {
